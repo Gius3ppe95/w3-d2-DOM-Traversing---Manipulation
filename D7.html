@@ -91,13 +91,21 @@
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
     */
 
-      const addClassToTitle = function () {};
+      const addClassToTitle = function () {
+        const title = document.querySelector("h1");
+        title.classList.add("myHeading");
+      };
+      addClassToTitle();
 
       /* ESERCIZIO 3
        Scrivi una funzione che cambi il testo dei p figli di un div
       */
 
-      const changePcontent = function () {};
+      const changePcontent = function () {
+        const newPs = document.querySelectorAll("div p");
+        Array.from(newPs).forEach((p) => (p.innerText = "descrizione esercizi Epicode"));
+      };
+      changePcontent();
 
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
