@@ -54,7 +54,7 @@
         <li>3rd</li>
       </ul>
 
-      <a href="https://epicode.com/it/">Questo link porta al sito di Epicode</a>
+      <a href="https://epicode.com/it/">Questo link porta al sito di Gt Talent</a>
 
       <div>
         <p>Questo testo è un placeholder per gli esercizi</p>
@@ -83,7 +83,7 @@
 
       const changeTitle = function () {
         const title = document.querySelector("h1");
-        title.innerText = "Epicode";
+        title.innerText = "Gt Talent";
       };
       changeTitle();
 
@@ -93,6 +93,7 @@
 
       const addClassToTitle = function () {
         const title = document.querySelector("h1");
+        title.classList.remove("class");
         title.classList.add("myHeading");
       };
       addClassToTitle();
@@ -103,7 +104,7 @@
 
       const changePcontent = function () {
         const newPs = document.querySelectorAll("div p");
-        Array.from(newPs).forEach((p) => (p.innerText = "descrizione esercizi Epicode"));
+        Array.from(newPs).forEach((p) => (p.innerText = "descrizione pilota"));
       };
       changePcontent();
 
@@ -111,14 +112,26 @@
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
 
-      const changeUrls = function () {};
+      const changeUrls = function () {
+        const links = document.querySelectorAll("a:not(footer a)");
+        for (let i = 0; i < links.length; i++) {
+          links[i].href =
+            "https://gttalent.com/it/?gclid=Cj0KCQjwm66pBhDQARIsALIR2zBkxQ4Mk00sTnYi7QMwS8psuUjgp0d9aIRPtbTb5yS21g2gGtMhhjIaAhTIEALw_wcB";
+        }
+      };
+      changeUrls();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
 
-      const addToTheSecond = function () {};
-
+      const addToTheSecond = function (content) {
+        const secondul = document.getElementById("secondList");
+        const li = document.createElement("li");
+        li.innerText = content;
+        secondul.appendChild(li);
+      };
+      addToTheSecond("nuovo elemento");
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
